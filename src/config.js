@@ -1,3 +1,3 @@
 export const config = {
-    api: "https://latinonetonlineapp.herokuapp.com"
+    api: "https://latinonetonlinepolls.herokuapp.com"
 }
