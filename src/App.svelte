@@ -11,7 +11,7 @@
   const fetchPollResult = () => {
     let pollId = window.location.hash.replace('#', '');
     fetch(
-      `${config.api}/api/Polls/GetResult/${pollId}`
+      `${config.api}/api/v1/polls/GetResult/${pollId}`
     )
       .then(res => res.json())
       .then(data => {
@@ -37,10 +37,10 @@
           datasets: [
             {
               data: [
-                pollResult.options[0].votes,
-                pollResult.options[1].votes,
-                pollResult.options[2].votes,
-                pollResult.options[3].votes
+                pollResult.result.options[0].votes,
+                pollResult.result.options[1].votes,
+                pollResult.result.options[2].votes,
+                pollResult.result.options[3].votes
               ],
               backgroundColor: [
                 "rgb(255, 99, 132)",
@@ -52,10 +52,10 @@
             }
           ],
           labels: [
-            pollResult.options[0].text,
-            pollResult.options[1].text,
-            pollResult.options[2].text,
-            pollResult.options[3].text
+            pollResult.result.options[0].Text,
+            pollResult.result.options[1].Text,
+            pollResult.result.options[2].Text,
+            pollResult.result.options[3].Text
           ]
         },
         options: {
